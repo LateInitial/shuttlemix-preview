@@ -104,7 +104,7 @@
     }
     .header-row, .row {
       display: grid;
-      grid-template-columns: 30px 1.28fr max-content 64px 58px 46px 52px;
+      grid-template-columns: 30px 1.25fr 56px 46px 66px 52px 48px;
       align-items: center;
       gap: 5px;
     }
@@ -127,7 +127,10 @@
     .row.skip { background: linear-gradient(90deg, #feeff0, #fde6e8); border-color: var(--skip-border); }
     .name { font-weight: 600; }
     .skill { color: #4f6fff; font-weight: 700; }
-    .col-skill { padding-right: 10px; }
+    .col-skill {
+      text-align: left;
+      justify-self: start;
+    }
     .col-games { text-align: center; }
     .col-actions { text-align: right; }
     .toggle-wrap { text-align: center; }
@@ -191,7 +194,7 @@
       .table-inner { width: max-content; min-width: 100%; }
       .header-row, .row {
         font-size: 12px;
-        grid-template-columns: 26px 1.22fr max-content 58px 50px 40px 44px;
+        grid-template-columns: 24px 1.2fr 52px 40px 62px 48px 42px;
         gap: 3px;
       }
       button.small { padding: 4px 5px; font-size: 10px; }
@@ -224,7 +227,7 @@
         <div class="card">
           <div class="table-scroll">
             <div class="table-inner">
-              <div class="header-row"><div>#</div><div>Name</div><div class="col-skill">Skill</div><div class="col-games">Games</div><div>Priority</div><div>Skip</div><div class="col-actions">Act</div></div>
+              <div class="header-row"><div>#</div><div>Name</div><div class="col-skill">Skill</div><div class="col-games">GP</div><div>Priority</div><div>Skip</div><div class="col-actions">Act</div></div>
               <div id="playersTable"></div>
             </div>
           </div>
