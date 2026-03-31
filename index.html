@@ -91,16 +91,19 @@
       padding: 12px;
     }
     .table-scroll {
+      width: 100%;
       overflow-x: auto;
+      overflow-y: hidden;
       -webkit-overflow-scrolling: touch;
       padding-bottom: 4px;
+      touch-action: pan-x pan-y;
     }
     .table-inner {
-      min-width: 680px;
+      min-width: 560px;
     }
     .header-row, .row {
       display: grid;
-      grid-template-columns: 40px 2fr 1fr 1fr 1fr 1fr 70px;
+      grid-template-columns: 32px 1.6fr max-content 60px 58px 46px 54px;
       align-items: center;
       gap: 6px;
     }
@@ -136,7 +139,7 @@
     }
     button.primary { background: var(--accent); }
     button.secondary { background: #7c8ab8; }
-    button.small { padding: 6px 8px; font-size: 12px; }
+    button.small { padding: 5px 6px; font-size: 11px; }
     .muted { color: var(--muted); font-size: 13px; }
     .pair-grid {
       display: grid;
@@ -181,7 +184,13 @@
       }
       .view { padding: 10px; }
       .card { padding: 10px; border-radius: 12px; }
-      .header-row, .row { font-size: 12px; }
+      .table-inner { min-width: 520px; }
+      .header-row, .row {
+        font-size: 12px;
+        grid-template-columns: 28px 1.45fr max-content 52px 52px 42px 48px;
+        gap: 4px;
+      }
+      button.small { padding: 4px 5px; font-size: 10px; }
       .pair-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -349,7 +358,7 @@
           <div>${p.matches}</div>
           <div class="toggle-wrap"><input type="checkbox" ${p.priority ? "checked" : ""} data-role="priority" data-id="${p.id}" ${p.skip ? "disabled" : ""}></div>
           <div class="toggle-wrap"><input type="checkbox" ${p.skip ? "checked" : ""} data-role="skip" data-id="${p.id}"></div>
-          <div><button class="small danger" data-role="delete" data-id="${p.id}">Delete</button></div>
+          <div><button class="small danger" data-role="delete" data-id="${p.id}">Del</button></div>
         `;
         table.appendChild(row);
       });
