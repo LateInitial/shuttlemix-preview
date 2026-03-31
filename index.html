@@ -99,13 +99,14 @@
       touch-action: pan-x pan-y;
     }
     .table-inner {
-      min-width: 560px;
+      width: max-content;
+      min-width: 100%;
     }
     .header-row, .row {
       display: grid;
-      grid-template-columns: 32px 1.6fr max-content 60px 58px 46px 54px;
+      grid-template-columns: 30px 1.28fr max-content 64px 58px 46px 52px;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
     }
     .header-row {
       color: #6a769f;
@@ -126,6 +127,9 @@
     .row.skip { background: linear-gradient(90deg, #feeff0, #fde6e8); border-color: var(--skip-border); }
     .name { font-weight: 600; }
     .skill { color: #4f6fff; font-weight: 700; }
+    .col-skill { padding-right: 10px; }
+    .col-games { text-align: center; }
+    .col-actions { text-align: right; }
     .toggle-wrap { text-align: center; }
     .danger { background: #d9585f; }
     button {
@@ -184,11 +188,11 @@
       }
       .view { padding: 10px; }
       .card { padding: 10px; border-radius: 12px; }
-      .table-inner { min-width: 520px; }
+      .table-inner { width: max-content; min-width: 100%; }
       .header-row, .row {
         font-size: 12px;
-        grid-template-columns: 28px 1.45fr max-content 52px 52px 42px 48px;
-        gap: 4px;
+        grid-template-columns: 26px 1.22fr max-content 58px 50px 40px 44px;
+        gap: 3px;
       }
       button.small { padding: 4px 5px; font-size: 10px; }
       .pair-grid { grid-template-columns: 1fr; }
@@ -220,7 +224,7 @@
         <div class="card">
           <div class="table-scroll">
             <div class="table-inner">
-              <div class="header-row"><div>#</div><div>Name</div><div>Skill</div><div>Games</div><div>Priority</div><div>Skip</div><div>Actions</div></div>
+              <div class="header-row"><div>#</div><div>Name</div><div class="col-skill">Skill</div><div class="col-games">Games</div><div>Priority</div><div>Skip</div><div class="col-actions">Act</div></div>
               <div id="playersTable"></div>
             </div>
           </div>
@@ -354,11 +358,11 @@
         row.innerHTML = `
           <div>${idx + 1}</div>
           <div class="name">${p.name}</div>
-          <div class="skill">${p.skill.toFixed(1)}</div>
-          <div>${p.matches}</div>
+          <div class="skill col-skill">${p.skill.toFixed(1)}</div>
+          <div class="col-games">${p.matches}</div>
           <div class="toggle-wrap"><input type="checkbox" ${p.priority ? "checked" : ""} data-role="priority" data-id="${p.id}" ${p.skip ? "disabled" : ""}></div>
           <div class="toggle-wrap"><input type="checkbox" ${p.skip ? "checked" : ""} data-role="skip" data-id="${p.id}"></div>
-          <div><button class="small danger" data-role="delete" data-id="${p.id}">Del</button></div>
+          <div class="col-actions"><button class="small danger" data-role="delete" data-id="${p.id}">Del</button></div>
         `;
         table.appendChild(row);
       });
