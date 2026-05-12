@@ -90,17 +90,17 @@ color: var(--text);
 min-width: 0;
 }
 #playersView .toolbar input {
-font-size: 16px;
-padding: 10px 12px;
-border-radius: 11px;
+font-size: 15px;
+padding: 9px 11px;
+border-radius: 10px;
 }
 #playersView .toolbar button {
-font-size: 15px;
-padding: 10px 14px;
+font-size: 14px;
+padding: 9px 12px;
 }
 .toolbar .name-input { min-width: 130px; flex: 1 1 130px; }
 .toolbar .skill-input { width: 76px; flex: 0 0 76px; }
-#playersView .toolbar .skill-input { width: 88px; flex: 0 0 88px; }
+#playersView .toolbar .skill-input { width: 82px; flex: 0 0 82px; }
 button#addPlayerBtn, button#resetBtn { flex-shrink: 0; }
 
 /* Highlight toolbar when in edit mode */
@@ -112,14 +112,14 @@ background: #f0f4ff;
 }
 .edit-mode-hint {
 display: none;
-font-size: 13px;
+font-size: 12.5px;
 color: #4f6fff;
 font-weight: 600;
 white-space: nowrap;
 align-self: center;
 }
 #playersView .edit-mode-hint {
-font-size: 14px;
+font-size: 13px;
 }
 .toolbar.editing-mode .edit-mode-hint {
 display: inline;
@@ -143,7 +143,7 @@ scrollbar-gutter: stable;
 /* Min width = sum of column mins + gaps; narrow viewports scroll horizontally instead of stretching tail cols. */
 .table-inner {
 width: 100%;
-min-width: 518px;
+min-width: 484px;
 box-sizing: border-box;
 }
 /* Name uses 1fr so extra width goes to names; tail cols are fixed so Skip→Edit→Del spacing matches other gaps. */
@@ -151,14 +151,14 @@ box-sizing: border-box;
 display: grid;
 width: 100%;
 grid-template-columns:
-34px
-minmax(110px, 1fr)
-46px
-40px
-78px
-52px
-68px
-58px;
+32px
+minmax(105px, 1fr)
+44px
+38px
+74px
+50px
+63px
+55px;
 align-items: center;
 column-gap: 3px;
 row-gap: 0;
@@ -166,21 +166,21 @@ row-gap: 0;
 .header-row {
 color: #6a769f;
 font-weight: 600;
-font-size: 14px;
-letter-spacing: 0.35px;
+font-size: 13px;
+letter-spacing: 0.425px;
 text-transform: uppercase;
-padding: 0 0 8px;
+padding: 0 0 7px;
 }
 .header-row > div {
 white-space: nowrap;
 min-width: 0;
 }
 .row {
-font-size: 17px;
-line-height: 1.4;
+font-size: 15.5px;
+line-height: 1.375;
 background: var(--card);
 border-radius: 12px;
-padding: 10px 0;
+padding: 9px 0;
 border: 1px solid #e1e9ff;
 margin-top: 6px;
 transition: background 0.15s, border-color 0.15s;
@@ -200,7 +200,7 @@ min-width: 0;
 white-space: normal;
 overflow-wrap: anywhere;
 word-break: break-word;
-line-height: 1.4;
+line-height: 1.375;
 font-size: inherit;
 }
 .skill { color: #4f6fff; font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -263,8 +263,8 @@ button.primary { background: var(--accent); }
 button.secondary { background: #7c8ab8; }
 button.small { padding: 6px 8px; font-size: 12px; }
 #playersView .row button.small {
-font-size: 14px;
-padding: 8px 10px;
+font-size: 13px;
+padding: 7px 9px;
 border-radius: 10px;
 }
 button.edit-btn { background: #4f6fff; }
@@ -320,11 +320,11 @@ font-size: 15px; font-weight: 700; text-align: center; color: var(--text);
 /* Leaderboard */
 .lb-table { width: 100%; border-collapse: separate; border-spacing: 0 5px; }
 .lb-table th {
-color: #6a769f; font-size: 14px; letter-spacing: 0.35px; text-transform: uppercase;
-padding: 6px 10px; text-align: left; font-weight: 600;
+color: #6a769f; font-size: 13px; letter-spacing: 0.425px; text-transform: uppercase;
+padding: 5px 10px; text-align: left; font-weight: 600;
 }
 .lb-table th.right, .lb-table td.right { text-align: center; }
-.lb-table td { padding: 11px 10px; font-size: 17px; background: var(--card); border: 1px solid #e1e9ff; }
+.lb-table td { padding: 10px 10px; font-size: 15.5px; background: var(--card); border: 1px solid #e1e9ff; }
 .lb-table td:first-child { border-radius: 12px 0 0 12px; }
 .lb-table td:last-child { border-radius: 0 12px 12px 0; border-right: 1px solid #e1e9ff; }
 .lb-rank { font-weight: 700; color: var(--muted); width: 28px; }
@@ -332,10 +332,10 @@ padding: 6px 10px; text-align: left; font-weight: 600;
 .lb-rank.top2 { color: #8fa8c8; font-size: 15px; }
 .lb-rank.top3 { color: #c47a3e; font-size: 15px; }
 .lb-name { font-weight: 700; }
-.lb-wins { font-weight: 800; color: #22a96e; font-size: 17px; }
+.lb-wins { font-weight: 800; color: #22a96e; font-size: 16px; }
 .lb-gp { color: var(--muted); font-weight: 600; }
 .lb-skill { color: #4f6fff; font-weight: 700; }
-.lb-points { font-weight: 800; color: #f5a623; font-size: 17px; }
+.lb-points { font-weight: 800; color: #f5a623; font-size: 16px; }
 @media (max-width: 760px) {
 body {
 padding: 0;
@@ -365,18 +365,18 @@ background: transparent;
 .top { padding-left: 12px; padding-right: 12px; }
 .view { padding: 8px 4px; }
 .card { padding: 8px 6px; border-radius: 12px; overflow: hidden; }
-.table-inner { min-width: 468px; width: 100%; box-sizing: border-box; }
+.table-inner { min-width: 440px; width: 100%; box-sizing: border-box; }
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 #playersView .header-row, #playersView .row {
 grid-template-columns:
-28px
-minmax(96px, 1fr)
-42px
-36px
-72px
-50px
-64px
-56px;
+25px
+minmax(92px, 1fr)
+40px
+34px
+67px
+48px
+60px
+53px;
 align-items: center;
 column-gap: 3px;
 row-gap: 0;
@@ -385,8 +385,8 @@ padding-right: 0;
 }
 button.small { padding: 6px 7px; font-size: 12px; }
 #playersView .row button.small {
-font-size: 14px;
-padding: 8px 9px;
+font-size: 13px;
+padding: 7px 8px;
 }
 .pair-grid { grid-template-columns: 1fr; }
 }
@@ -885,18 +885,24 @@ const facts = [];
 const scored = history.filter(h => h.scoreA !== null);
 if (!scored.length || players.length < 2) return facts;
 
-// Helper: avg score margin for a set of matches
 const margin = (matches) => {
 const total = matches.reduce((s, h) => s + Math.abs(h.scoreA - h.scoreB), 0);
 return total / matches.length;
 };
 
-// 1. Closest matches overall player — always plays tight games
+const pushFact = (type, subjectIds, emoji, text) => {
+const ids = [...new Set(subjectIds)].filter(Boolean);
+facts.push({ type, subjectIds: ids, emoji, text });
+};
+
+// 1. Tight average scoring margin (same trivia family as clutch wins below)
 players.forEach(p => {
 const pm = scored.filter(h => [...h.pairAIds, ...h.pairBIds].includes(p.id));
 if (pm.length >= 2) {
 const avg = margin(pm);
-if (avg <= 4) facts.push({ emoji: "🎯", text: `<strong>${p.name}</strong> lives on the edge — their matches have an average margin of just <strong>${avg.toFixed(1)} points</strong>. Every rally counts!` });
+if (avg <= 4) {
+pushFact("CLOSE_SCORING", [p.id], "🎯", `<strong>${p.name}</strong> lives on the edge — their matches have an average margin of just <strong>${avg.toFixed(1)} points</strong>. Every rally counts!`);
+}
 }
 });
 
@@ -904,7 +910,7 @@ if (avg <= 4) facts.push({ emoji: "🎯", text: `<strong>${p.name}</strong> live
 players.forEach(p => {
 if (p.matches >= 2 && p.wins / p.matches >= 0.75) {
 const pct = Math.round((p.wins / p.matches) * 100);
-facts.push({ emoji: "🔥", text: `<strong>${p.name}</strong> is on fire with a <strong>${pct}% win rate</strong> across ${p.matches} games. Unstoppable!` });
+pushFact("HIGH_WIN_RATE", [p.id], "🔥", `<strong>${p.name}</strong> is on fire with a <strong>${pct}% win rate</strong> across ${p.matches} games. Unstoppable!`);
 }
 });
 
@@ -924,18 +930,16 @@ if (won) pairStats[key].wins++;
 });
 });
 Object.values(pairStats).forEach(ps => {
-if (ps.total >= 2 && ps.wins === ps.total) {
+if (ps.total >= 2 && ps.wins === ps.total && ps.ids.length === 2) {
 const names = ps.ids.map(id => byId(id)?.name).filter(Boolean);
-if (names.length === 2) facts.push({ emoji: "🤝", text: `<strong>${names[0]}</strong> & <strong>${names[1]}</strong> are an unbeaten duo — <strong>${ps.wins} wins from ${ps.total} matches</strong> together. Chemistry unlocked!` });
+if (names.length === 2) pushFact("PERFECT_DUO", ps.ids, "🤝", `<strong>${names[0]}</strong> & <strong>${names[1]}</strong> are an unbeaten duo — <strong>${ps.wins} wins from ${ps.total} matches</strong> together. Chemistry unlocked!`);
 }
 });
 
-// 4. Comeback king — won a match with the largest deficit overcome (score gap tightest but still won, i.e. won despite being the lower avg team)
-// Actually: player who has won the most matches where their pair's avg score was lower
+// 4. Clutch wins (narrow margins) — same trivia type as (1) so only one "close scoring" angle shows
 const comebacks = {};
 scored.forEach(h => {
 const aWon = h.scoreA > h.scoreB;
-// loser had higher raw score than winner? No. Let's find matches won by smaller margin (margin 1-3 = clutch)
 const m = Math.abs(h.scoreA - h.scoreB);
 if (m <= 3) {
 const winIds = aWon ? h.pairAIds : h.pairBIds;
@@ -948,11 +952,10 @@ comebacks[id]++;
 const topClutch = Object.entries(comebacks).sort((a,b) => b[1]-a[1])[0];
 if (topClutch && topClutch[1] >= 2) {
 const p = byId(topClutch[0]);
-if (p) facts.push({ emoji: "💪", text: `<strong>${p.name}</strong> thrives under pressure — they've won <strong>${topClutch[1]} nail-biting matches</strong> decided by 3 points or fewer. Clutch player!` });
+if (p) pushFact("CLOSE_SCORING", [p.id], "💪", `<strong>${p.name}</strong> thrives under pressure — they've won <strong>${topClutch[1]} nail-biting matches</strong> decided by 3 points or fewer. Clutch player!`);
 }
 
-// 8. Dynamic trio — 3 players who've all shared court together most often
-// Find player with most unique teammates
+// 5. Most unique partners
 const teammates = {};
 scored.forEach(h => {
 const allPairs = [h.pairAIds, h.pairBIds];
@@ -966,25 +969,29 @@ teammates[b].add(a);
 }
 });
 });
-let socialPlayer = { name: null, count: 0 };
+let socialPlayer = { id: null, name: null, count: 0 };
 Object.entries(teammates).forEach(([id, set]) => {
-if (set.size > socialPlayer.count) socialPlayer = { name: byId(id)?.name, count: set.size };
+if (set.size > socialPlayer.count) socialPlayer = { id, name: byId(id)?.name, count: set.size };
 });
-if (socialPlayer.name && socialPlayer.count >= 3) facts.push({ emoji: "🌟", text: `<strong>${socialPlayer.name}</strong> has partnered with <strong>${socialPlayer.count} different players</strong> — the ultimate team player who gels with everyone!` });
+if (socialPlayer.id && socialPlayer.count >= 3) {
+pushFact("PARTNER_DIVERSITY", [socialPlayer.id], "🌟", `<strong>${socialPlayer.name}</strong> has partnered with <strong>${socialPlayer.count} different players</strong> — the ultimate team player who gels with everyone!`);
+}
 
-// 9. Best winning margin — dominant win
-let biggestWin = { names: null, margin: 0 };
+// 6. Biggest blowout (wide margin — different from CLOSE_SCORING)
+let biggestWin = { ids: null, names: null, margin: 0, score: "" };
 scored.forEach(h => {
 const m = Math.abs(h.scoreA - h.scoreB);
 if (m > biggestWin.margin) {
 const winIds = h.scoreA > h.scoreB ? h.pairAIds : h.pairBIds;
 const names = winIds.map(id => byId(id)?.name).filter(Boolean);
-biggestWin = { names, margin: m, score: `${Math.max(h.scoreA,h.scoreB)}–${Math.min(h.scoreA,h.scoreB)}` };
+biggestWin = { ids: winIds, names, margin: m, score: `${Math.max(h.scoreA,h.scoreB)}–${Math.min(h.scoreA,h.scoreB)}` };
 }
 });
-if (biggestWin.names && biggestWin.margin >= 8) facts.push({ emoji: "💥", text: `Biggest blowout goes to <strong>${biggestWin.names.join(" & ")}</strong> — they crushed it <strong>${biggestWin.score}</strong>! Dominant!` });
+if (biggestWin.names && biggestWin.ids && biggestWin.margin >= 8) {
+pushFact("BLOWOUT", biggestWin.ids, "💥", `Biggest blowout goes to <strong>${biggestWin.names.join(" & ")}</strong> — they crushed it <strong>${biggestWin.score}</strong>! Dominant!`);
+}
 
-// 10. Winning streak — player with most consecutive wins
+// 7. Longest win streak
 const playerLastResults = {};
 history.forEach(h => {
 if (h.scoreA === null) return;
@@ -995,19 +1002,23 @@ const won = h.pairAIds.includes(id) ? aWon : !aWon;
 playerLastResults[id].push(won);
 });
 });
-let bestStreak = { name: null, streak: 0 };
+let bestStreak = { id: null, name: null, streak: 0 };
 Object.entries(playerLastResults).forEach(([id, results]) => {
 let streak = 0, max = 0;
 results.forEach(w => { streak = w ? streak + 1 : 0; max = Math.max(max, streak); });
-if (max > bestStreak.streak) bestStreak = { name: byId(id)?.name, streak: max };
+if (max > bestStreak.streak) bestStreak = { id, name: byId(id)?.name, streak: max };
 });
-if (bestStreak.name && bestStreak.streak >= 3) facts.push({ emoji: "🚀", text: `<strong>${bestStreak.name}</strong> is riding a hot streak — <strong>${bestStreak.streak} wins in a row</strong>! Can anyone stop them?` });
+if (bestStreak.id && bestStreak.streak >= 3) {
+pushFact("WIN_STREAK", [bestStreak.id], "🚀", `<strong>${bestStreak.name}</strong> is riding a hot streak — <strong>${bestStreak.streak} wins in a row</strong>! Can anyone stop them?`);
+}
 
-// 13. Iron man — player who's played the most games total
+// 8. Most games played
 const mostGames = [...players].sort((a,b) => b.matches - a.matches)[0];
-if (mostGames && mostGames.matches >= 5) facts.push({ emoji: "🏃", text: `<strong>${mostGames.name}</strong> has played the most games of anyone — <strong>${mostGames.matches} matches</strong> and still going strong. The heart of the group!` });
+if (mostGames && mostGames.matches >= 5) {
+pushFact("GAMES_LEADER", [mostGames.id], "🏃", `<strong>${mostGames.name}</strong> has played the most games of anyone — <strong>${mostGames.matches} matches</strong> and still going strong. The heart of the group!`);
+}
 
-// 16. Rival duo — two players who've faced each other the most as opponents
+// 9. Frequent opponents
 const rivalStats = {};
 scored.forEach(h => {
 h.pairAIds.forEach(a => h.pairBIds.forEach(b => {
@@ -1019,11 +1030,10 @@ const topRival = Object.entries(rivalStats).sort((a,b) => b[1]-a[1])[0];
 if (topRival && topRival[1] >= 3) {
 const [id1, id2] = topRival[0].split("|");
 const n1 = byId(id1)?.name, n2 = byId(id2)?.name;
-if (n1 && n2) facts.push({ emoji: "⚔️", text: `<strong>${n1}</strong> and <strong>${n2}</strong> have faced each other across the net <strong>${topRival[1]} times</strong> — the group's most compelling rivalry!` });
+if (n1 && n2) pushFact("RIVALRY", [id1, id2], "⚔️", `<strong>${n1}</strong> and <strong>${n2}</strong> have faced each other across the net <strong>${topRival[1]} times</strong> — the group's most compelling rivalry!`);
 }
 
-// 18. Lone wolf — player who wins alone (most solo-deciding wins i.e. teammate had fewer matches)
-// Proxy: player with highest wins who has the fewest unique partners
+// 10. Exclusive partnership
 const partnerCount = {};
 scored.forEach(h => {
 [{ ids: h.pairAIds }, { ids: h.pairBIds }].forEach(({ ids }) => {
@@ -1045,37 +1055,33 @@ loyalDuo = p;
 if (loyalDuo && minPartners === 1) {
 const partId = [...(partnerCount[loyalDuo.id] || [])][0];
 const partName = byId(partId)?.name;
-if (partName) facts.push({ emoji: "💞", text: `<strong>${loyalDuo.name}</strong> and <strong>${partName}</strong> have only ever partnered with each other — a loyal duo through and through!` });
+if (partName) pushFact("EXCLUSIVE_DUO", [loyalDuo.id, partId], "💞", `<strong>${loyalDuo.name}</strong> and <strong>${partName}</strong> have only ever partnered with each other — a loyal duo through and through!`);
 }
 
-// 20. Veteran — player with 0 losses (undefeated, min 3 games)
+// 11. Undefeated record
 players.forEach(p => {
-if (p.matches >= 3 && p.wins === p.matches) facts.push({ emoji: "👑", text: `<strong>${p.name}</strong> remains <strong>undefeated</strong> after ${p.matches} games. Royalty on the court!` });
+if (p.matches >= 3 && p.wins === p.matches) {
+pushFact("UNDEFEATED", [p.id], "👑", `<strong>${p.name}</strong> remains <strong>undefeated</strong> after ${p.matches} games. Royalty on the court!`);
+}
 });
 
-// Shuffle all candidates first
+// Shuffle candidates, then pick up to 3: unique fact types, no player in more than one slot
 for (let i = facts.length - 1; i > 0; i--) {
 const j = Math.floor(Math.random() * (i + 1));
 [facts[i], facts[j]] = [facts[j], facts[i]];
 }
-// Deduplicate: no player should be the solo subject of more than one fact.
-// Detect which player names appear in each fact text, then check against our player list.
-const playerNames = players.map(p => p.name);
-const usedSoloNames = new Set();
+const usedTypes = new Set();
+const usedPlayerIds = new Set();
 const chosen = [];
 for (const f of facts) {
 if (chosen.length >= 3) break;
-const namesInFact = playerNames.filter(n => f.text.includes(`<strong>${n}</strong>`));
-// A "solo" fact features exactly one player name from our roster
-const isSoloFact = namesInFact.length === 1;
-if (isSoloFact) {
-const name = namesInFact[0];
-if (usedSoloNames.has(name)) continue;
-usedSoloNames.add(name);
-}
+if (usedTypes.has(f.type)) continue;
+if (f.subjectIds.some(id => usedPlayerIds.has(id))) continue;
 chosen.push(f);
+usedTypes.add(f.type);
+f.subjectIds.forEach(id => usedPlayerIds.add(id));
 }
-return chosen;
+return chosen.map(({ emoji, text }) => ({ emoji, text }));
 }
 
 function renderFunFacts() {
