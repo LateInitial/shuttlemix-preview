@@ -127,11 +127,13 @@ padding-bottom: 6px;
 /* Reserve space for scrollbar so content stays visually balanced (avoids “lopsided” padding). */
 scrollbar-gutter: stable;
 }
+/* Min width = sum of column mins + gaps; narrow viewports scroll horizontally instead of stretching tail cols. */
 .table-inner {
 width: 100%;
-min-width: 0;
+min-width: 432px;
+box-sizing: border-box;
 }
-/* Name column grows to fill the row so the grid isn’t left-hugging with empty space on the right. */
+/* Name uses 1fr so extra width goes to names; tail cols are fixed so Skip→Edit→Del spacing matches other gaps. */
 .header-row, .row {
 display: grid;
 width: 100%;
@@ -140,12 +142,13 @@ grid-template-columns:
 minmax(96px, 1fr)
 40px
 32px
-minmax(64px, max-content)
-minmax(44px, max-content)
-minmax(52px, max-content)
-minmax(46px, max-content);
+68px
+46px
+54px
+48px;
 align-items: center;
-gap: 4px;
+column-gap: 3px;
+row-gap: 0;
 }
 .header-row {
 color: #6a769f;
@@ -179,9 +182,10 @@ outline: 2px solid rgba(79,111,255,0.3);
 .name {
 font-weight: 600;
 min-width: 0;
-overflow: hidden;
-text-overflow: ellipsis;
-white-space: nowrap;
+white-space: normal;
+overflow-wrap: anywhere;
+word-break: break-word;
+line-height: 1.35;
 }
 .skill { color: #4f6fff; font-weight: 700; font-variant-numeric: tabular-nums; }
 .col-skill {
@@ -219,6 +223,10 @@ min-width: 0;
 .header-row > .col-del,
 .row > .col-del {
 justify-self: center;
+}
+.row .col-actions button,
+.row .col-del button {
+flex-shrink: 0;
 }
 .toggle-wrap {
 display: flex;
@@ -336,7 +344,7 @@ background: transparent;
 .top { padding-left: 12px; padding-right: 12px; }
 .view { padding: 8px 4px; }
 .card { padding: 8px 6px; border-radius: 12px; overflow: hidden; }
-.table-inner { min-width: 0; width: 100%; }
+.table-inner { min-width: 392px; width: 100%; box-sizing: border-box; }
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .header-row, .row {
 font-size: 11px;
@@ -345,11 +353,13 @@ grid-template-columns:
 minmax(72px, 1fr)
 30px
 24px
-minmax(44px, max-content)
-minmax(36px, max-content)
-minmax(44px, max-content)
-minmax(40px, max-content);
-gap: 4px;
+56px
+40px
+48px
+42px;
+align-items: center;
+column-gap: 3px;
+row-gap: 0;
 padding-left: 0;
 padding-right: 0;
 }
