@@ -297,15 +297,19 @@ border-radius: 0;
 border: 0;
 background: transparent;
 }
-.view { padding: 10px; }
-.card { padding: 10px; border-radius: 12px; }
+.top { padding-left: 12px; padding-right: 12px; }
+.view { padding: 8px 4px; }
+.card { padding: 8px 6px; border-radius: 12px; overflow: hidden; }
 .table-inner { min-width: 0; width: 100%; }
-.table-scroll { overflow-x: visible; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .header-row, .row {
 font-size: 11px;
-grid-template-columns: 20px 1fr 36px 26px 40px 36px 40px 36px;
-gap: 2px;
+grid-template-columns: 18px minmax(80px,1fr) 34px 26px 48px 38px 38px 34px;
+gap: 4px;
+padding-left: 6px;
+padding-right: 6px;
 }
+.header-row { letter-spacing: 0; }
 button.small { padding: 4px 5px; font-size: 10px; }
 .pair-grid { grid-template-columns: 1fr; }
 }
